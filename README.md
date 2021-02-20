@@ -42,10 +42,11 @@ C'est une manière pratique d'écrire un script à exécuter durant l'exécution
 
 Exemple pour **chroot**
 ```sh
-DST=$DST chroot /mnt/dev/sdb1 bash -c "echo \$DST ; blkid"
-# équivalent MAIS beaucoup plus lisible et pratique
-cat << EOF | DST=$DST chroot /mnt/dev/sdb1
- echo \$DST
- blkid
+o_lsblk=$( lsblk ) chroot /mnt/dev/sdb1 bash -c "echo \"\$o_lsblk\" ; lsblk"
+# équivalent en PLUS lisible et pratique
+cat << EOF | o_lsblk=$( lsblk ) \
+             chroot /mnt/dev/sdb1
+ echo "\$o_lsblk"
+ lsblk
 EOF
 ```
