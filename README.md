@@ -25,7 +25,7 @@ r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chos
 ```sh
 if [[ $( command_with_result_as_number ) > val ]] ; then echo $f ; fi ; 
 ```
-# Exécuter un script et afficher sur stdout durant exécution d'une commande
+# Exécuter un script durant exécution d'une commande (sortie stdout)
 Par exemple pour exécuter un script intégré durant l'exécution d'un chroot, ssh ou su
 
 Forme générale :
