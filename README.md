@@ -13,3 +13,15 @@ echo $( hms2s "05:10" )
 echo $( hms2s "02:05:10" )
 echo $( hms2s "00:05:10" )
 ```
+# test if ... elif ... else ... fi
+## La forme non nommée iniligne
+```sh
+[[ $( command ) ]] && echo "seulement si la commande renvoie quelque chose"
+r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chose"
+[[ $( command ) && echo "si true" || echo "si false"
+[[ $( command_return_number ) > number ]] && echo "true"
+```
+## La forme nommée iniligne
+```sh
+if [[ $( command_with_result_as_number ) > val ]] ; then echo $f ; fi ; 
+```
