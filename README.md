@@ -25,7 +25,7 @@ r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chos
 ```sh
 if [[ $( command_with_result_as_number ) > val ]] ; then echo $f ; fi ; 
 ```
-# Exécuter script au lancement d'une commande en affichant sur stdout
+# Exécuter un script et afficher sur stdout durant exécution d'une commande
 Par exemple pour exécuter un script intégré durant l'exécution d'un chroot, ssh ou su
 
 Forme générale :
@@ -40,7 +40,7 @@ EOF
 ```
 C'est une manière pratique d'écrire un script à exécuter durant l'exécution d'une commande
 
-Exemple pour chroot
+Exemple pour **chroot**
 ```sh
 DST=$DST chroot /mnt/dev/sdb1 bash -c "echo \$DST ; blkid"
 # équivalent MAIS beaucoup plus lisible et pratique
