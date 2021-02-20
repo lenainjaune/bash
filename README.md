@@ -30,10 +30,20 @@ Par exemple pour exécuter un script intégré durant l'exécution d'un chroot, 
 
 Forme générale :
 ```sh
-cat << EOF | command \
-             that can be on multiple lines
- command
- # comment $var_pre_expanded \$var_post_expanded
- #         \char_pre_escaped \\char_post_escaped
+cat << EOF | commande \
+             qui peut être multilignes
+ commande
+ # commentaire $var_pre_expanded \$var_post_expanded
+ #             \char_pre_escaped \\char_post_escaped
+EOF
+# Attention : EOF DOIT commencer une nouvelle ligne et DOIT être suivi par un saut de ligne
+```
+C'est une manière pratique d'écrire un script à exécuter durant l'exécution de la commande
+```sh
+DST=$DST chroot /mnt/dev/sdb1 bash -c "echo \$DST ; blkid"
+# équivalent MAIS beaucoup plus lisible et pratique
+cat << EOF | DST=$DST chroot /mnt/dev/sdb1
+ echo \$DST
+ blkid
 EOF
 ```
