@@ -25,3 +25,15 @@ r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chos
 ```sh
 if [[ $( command_with_result_as_number ) > val ]] ; then echo $f ; fi ; 
 ```
+# Exécuter script au lancement d'une commande en affichant sur stdout
+Par exemple pour exécuter un script intégré durant l'exécution d'un chroot, ssh ou su
+
+Forme générale :
+```sh
+cat << EOF | command \
+             that can be on multiple lines
+ command
+ # comment $var_pre_expanded \$var_post_expanded
+ #         \char_pre_escaped \\char_post_escaped
+EOF
+```
