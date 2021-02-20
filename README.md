@@ -54,8 +54,7 @@ Exemple pour **ssh**
 ```sh
 ssh root@buster-glpi.local bash -c "blkid ; ip ad"
 # vs
-cat << EOF | ssh \
-             root@buster-glpi.local bash
+cat << EOF | ssh user@host.local bash
  blkid
  ip ad
 EOF
