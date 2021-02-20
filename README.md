@@ -38,7 +38,9 @@ cat << EOF | commande \
 EOF
 # Attention : EOF DOIT commencer une nouvelle ligne et DOIT être suivi par un saut de ligne
 ```
-C'est une manière pratique d'écrire un script à exécuter durant l'exécution de la commande
+C'est une manière pratique d'écrire un script à exécuter durant l'exécution d'une commande
+
+Exemple pour chroot
 ```sh
 DST=$DST chroot /mnt/dev/sdb1 bash -c "echo \$DST ; blkid"
 # équivalent MAIS beaucoup plus lisible et pratique
