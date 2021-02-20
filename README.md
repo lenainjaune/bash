@@ -50,3 +50,13 @@ cat << EOF | o_lsblk=$( lsblk ) \
  lsblk
 EOF
 ```
+Exemple pour **ssh**
+```sh
+ssh root@buster-glpi.local bash -c "blkid ; ip ad"
+# vs
+cat << EOF | ssh \
+             root@buster-glpi.local bash
+ blkid
+ ip ad
+EOF
+```
