@@ -79,3 +79,16 @@ cat << EOF | ssh user@host.local bash
  ip ad
 EOF
 ```
+# Détecter si une commande échoue même si elle est piped
+```sh
+root@host:~# cat backup.sh
+# Permet de prendre en compte la première erreur d'une commande pipée
+# if ! ( a | b ) ; then echo KO ; exit ; fi
+# si a ou b échoue => KO (sans, seul b serait pris en compte)
+set -o pipefail
+...
+if ! ( a | b ) ; then
+echo KO
+exit 1
+fi
+```
