@@ -14,26 +14,36 @@ echo $( hms2s "02:05:10" )
 echo $( hms2s "00:05:10" )
 ```
 # test if ... elif ... else ... fi
+Remarque : seules les clauses `if` sont obligatoires
 ## Forme non nommée iniligne
 ```sh
-# gestion des chaines
+# if ... then ... fi
+#  chaines
 [[ $( command ) ]] && echo "seulement si la commande renvoie quelque chose"
 r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chose"
 [[ $( command ) == "" ]] && echo "seulement si la commande ne renvoie RIEN"
-[[ $( command ) ]] && echo "si true" || echo "si false"
-# Gestion des numériques
+#  numériques
 [[ $( command_return_number ) -gt val ]] && echo "OK : > val"
 # nota : -eq (equal), -ne (not eq), -gt (greater than), -lt (lesser than), -ge (greater eq), -le (lesser eq)
+# if ... then ... else ... fi
+[[ $( command ) ]] && echo "si true" || echo "si false"
 ```
 ## Forme nommée
+
 ```sh
-if [[ $( command ) ]] ; then
- echo OK
-fi ; 
+# if ... then ... fi
+if [[ $( command1 ) ]] ; then
+ echo if match
+elif [[ $command2 ) ]] ; then
+ echo elif match
+else
+ echo else match
+fi
 ```
-## Forme nommée iniligne
+Nota : la clause elif peut être réitéré autant qu'on veut
+### iniligne
 ```sh
-if [[ $( command ) ]] ; then echo OK ; fi
+if [[ $( command ) ]] ; then echo true ; else echo false ; fi
 ```
 # Exécuter script durant exécution d'une commande (sortie stdout)
 Par exemple pour exécuter un script intégré durant l'exécution d'un chroot, ssh ou su
