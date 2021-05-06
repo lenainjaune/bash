@@ -14,17 +14,26 @@ echo $( hms2s "02:05:10" )
 echo $( hms2s "00:05:10" )
 ```
 # test if ... elif ... else ... fi
-## La forme non nommée iniligne
+## Forme non nommée iniligne
 ```sh
+# gestion des chaines
 [[ $( command ) ]] && echo "seulement si la commande renvoie quelque chose"
-[[ $( command ) == "" ]] && echo "seulement si la commande ne renvoie RIEN"
 r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chose"
+[[ $( command ) == "" ]] && echo "seulement si la commande ne renvoie RIEN"
 [[ $( command ) ]] && echo "si true" || echo "si false"
-[[ $( command_return_number ) > number ]] && echo "true"
+# Gestion des numériques
+[[ $( command_return_number ) -gt val ]] && echo "OK : > val"
+# nota : -eq (equal), -ne (not eq), -gt (greater than), -lt (lesser than), -ge (greater eq), -le (lesser eq)
 ```
-## La forme nommée iniligne
+## Forme nommée
 ```sh
-if [[ $( command_with_result_as_number ) > val ]] ; then echo $f ; fi ; 
+if [[ $( command ) ]] ; then
+ echo OK
+fi ; 
+```
+## Forme nommée iniligne
+```sh
+if [[ $( command ) ]] ; then echo OK ; fi
 ```
 # Exécuter script durant exécution d'une commande (sortie stdout)
 Par exemple pour exécuter un script intégré durant l'exécution d'un chroot, ssh ou su
