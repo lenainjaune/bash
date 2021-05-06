@@ -85,6 +85,7 @@ root@host:~# cat backup.sh
 # Permet de prendre en compte la première erreur d'une commande pipée
 # if ! ( a | b ) ; then echo KO ; exit ; fi
 # si a ou b échoue => KO (sans, seul b serait pris en compte)
+# voir aussi : https://coderwall.com/p/fkfaqq/safer-bash-scripts-with-set-euxo-pipefail
 set -o pipefail
 ...
 if ! ( a | b ) ; then
