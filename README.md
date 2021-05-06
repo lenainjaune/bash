@@ -17,8 +17,9 @@ echo $( hms2s "00:05:10" )
 ## La forme non nommée iniligne
 ```sh
 [[ $( command ) ]] && echo "seulement si la commande renvoie quelque chose"
+[[ $( command ) == "" ]] && echo "seulement si la commande ne renvoie RIEN"
 r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chose"
-[[ $( command ) && echo "si true" || echo "si false"
+[[ $( command ) ]] && echo "si true" || echo "si false"
 [[ $( command_return_number ) > number ]] && echo "true"
 ```
 ## La forme nommée iniligne
