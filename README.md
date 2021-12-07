@@ -101,10 +101,10 @@ PS1="\[\033$( [[ $USER == root ]] && echo $rouge '[0;91m' \
 || ( [[ $USER == lnj ]] && echo $jaune '[01;33m' || echo $vert '[01;32m' ) )\]\u@\h:\w\[\033[00m\]\$ "
 
 # Historique
-# Ignore les commentaires et les commandes précédées par 1,n espaces
-# Ignore les commandes identiques successives
-# On conserve les 10000 dernières commandes
-# Quand on ouvre un shell depuis un autres les commandes sont conservées
+# Ignorer les commentaires et les commandes précédées par 1,n espaces
+# Ignorer les commandes identiques successives
+# Conserver plus de commandes
+# Conserver historique quand on ouvre un shell depuis un autre
 export HISTIGNORE="#*"
 export HISTCONTROL="ignorespaces:ignoredups"
 export HISTSIZE=10000
