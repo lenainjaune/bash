@@ -93,3 +93,19 @@ echo KO
 exit 1
 fi
 ```
+# bashrc
+Nota : pour le rendre permanent le mettre à la fin du .bashrc du user tout en s'assurant que le script n'est pas quitté plus tôt
+```sh
+# Prompt en couleur selon user
+PS1="\e$( [[ $USER == root ]] && echo $rouge "[0;91m" || ( [[ $USER == lnj ]] && echo $jaune "[01;33m" || echo $vert "[01;32m" ) )\u@\h:\w\e[0m\$ "
+
+# Historique
+# Ignore les commentaires et les commandes précédées par 1,n espaces
+# Ignore les commandes identiques successives
+# On conserve les 10000 dernières commandes
+# Quand on ouvre un shell depuis un autres les commandes sont conservées
+export HISTIGNORE="#*"
+export HISTCONTROL="ignorespaces:ignoredups"
+export HISTSIZE=10000
+shopt -s histappend
+```
