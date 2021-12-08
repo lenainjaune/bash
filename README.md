@@ -98,7 +98,7 @@ Nota : pour le rendre permanent le mettre à la fin du .bashrc du user tout en s
 ```sh
 # Prompt en couleur selon user (les variables couleurs servent de commentaire puisqu'elles sont vides)
 PS1="\[\033$( [[ $USER == root ]] && echo $rouge '[0;91m' \
-|| ( [[ $USER == lnj ]] && echo $jaune '[01;33m' || echo $vert '[01;32m' ) )\]\u@\h:\w\[\033[00m\]\$ "
+|| ( [[ $USER == lnj ]] && echo $jaune '[01;33m' || echo $vert '[01;32m' ) )\]\u@\h:\w\[\033[00m\]\\\$ "
 
 # Historique
 # Ignorer les commentaires de code et les commandes précédées par 1,n espaces
