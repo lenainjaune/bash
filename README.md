@@ -3,6 +3,12 @@ HowTo bash
 
 Ici seront conservées les versions les plus portables et lisibles pour éviter un maximum un environnement précis et/ou des dépendances.
 
+# Source script
+```sh
+user@host:~$ echo "Source: "`whoami`"@"`hostname`":"${BASH_SOURCE[0]}
+Source: root@host:/my/script/path/script_name.sh
+```
+
 # HH:MM:SS en S
 source : https://stackoverflow.com/questions/2181712/simple-way-to-convert-hhmmss-hoursminutesseconds-split-seconds-to-seconds/48032950#48032950
 ```sh
