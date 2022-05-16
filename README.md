@@ -7,6 +7,8 @@ Ici seront conservées les versions les plus portables et lisibles pour éviter 
 ```sh
 user@host:~$ echo "Source: "`whoami`"@"`hostname`":"${BASH_SOURCE[0]}
 Source: root@host:/my/script/path/script_name.sh
+user@host:~$ echo "File: " $( basename -- ${BASH_SOURCE[0]} )
+File: script_name.sh
 ```
 
 # HH:MM:SS en S
