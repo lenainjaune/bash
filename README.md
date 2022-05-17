@@ -119,3 +119,8 @@ export HISTCONTROL="ignorespaces:ignoredups"
 export HISTSIZE=10000
 shopt -s histappend
 ```
+# heredoc
+
+TODO : indentation écriture non prise en compte à l'effet (espaces, tabs), conserver en l'état / ne PAS substituer (expander ?)
+
+Dans une variable : [ici](https://stackoverflow.com/questions/1167746/how-to-assign-a-heredoc-value-to-a-variable-in-bash)
