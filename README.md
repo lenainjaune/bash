@@ -36,6 +36,7 @@ r=$( command ) ; [[ $r ]] && echo "seulement si la commande renvoie quelque chos
 # if ... then ... else ... fi
 [[ $( command ) ]] && echo "si true" || echo "si false"
 ```
+Nota : cette forme supporte mal les multiples commandes, en particulier si on utilise une variable d'environnement dans un sous bloc. Ainsi A=... ; [[ ... ]] && ( A=... ;  ) fonctione, mais A du sous bloc n'écrasera pas A externe
 ## Forme nommée
 
 ```sh
